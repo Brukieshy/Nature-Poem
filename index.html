@@ -1,0 +1,60 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGuessingGame {
+
+
+    public static void main (String []args) {
+
+        //declare
+        Scanner keyboard;
+        int pickedNumber;
+        int go = 0;
+        String keepGoing;
+
+
+        //initialize
+        keyboard = new Scanner(System.in);
+
+        Random generator = new Random();
+        int numberToGuess = generator.nextInt(1000);
+        int numberOfTries = 0;
+        Scanner input = new Scanner(System.in);
+        int guess;
+        boolean win = false;
+        System.out.println("Greetings! Pick numbers between 1 and 1000 to win!");
+        while (go == 0) {
+
+
+            System.out.println("Pick a number between 1 and 1000");
+            pickedNumber = input.nextInt();
+            numberOfTries++;
+            while (win == false);
+
+            if (pickedNumber == numberToGuess) ; {
+                win = true;
+
+            }
+
+
+            else if (pickedNumber < numberToGuess) {
+                 System.out.println("The number you have chosen is too low.");
+             }
+            else if (pickedNumber > numberToGuess) {
+                 System.out.println("The number you have chosen is too high.");
+             }
+
+            System.out.println("You won! The number you have chosen, " + pickedNumber + " was the right number. ");
+            System.out.println("Would you like to play again?");
+            System.out.println("Type 'y' for yes or 'n' for no.");
+            keepGoing = keyboard.nextLine();
+            go = keepGoing.indexOf("y");
+
+        }
+
+            System.out.println("Thanks for playing the Number Guessing Game! Have a good day!");
+
+
+        }
+
+    }
